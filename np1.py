@@ -1,4 +1,6 @@
-
+from gravar_arquivo import gravar_arquivo
+from ler_arquivo import ler_arquivo
+from ler_arquivo import ler_arquivo_desestruturado
 
 def menu():
     print("=== Menu de Opções ===")
@@ -11,13 +13,18 @@ def menu():
     return escolha
 
 def opcao_1():
-    print("Você escolheu a opção 1.")
+    print("Gravando arquivo com dados em formato JSON.")
+    gravar_arquivo("arquivo.json", {"title":"Opção 1"})
 
 def opcao_2():
-    print("Você escolheu a opção 2.")
+    print("Lendo arquivo e apresentando na tela.")
+    dados = ler_arquivo("arquivo.json")
+    print(dados)
 
 def opcao_3():
-    print("Você escolheu a opção 3.")
+    print("Lendo arquivo com dados desestruturados.")
+    dados = ler_arquivo_desestruturado("arquivo.json")
+    print(dados['title'])
 
 def main():
     while True:
